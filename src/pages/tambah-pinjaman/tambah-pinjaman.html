@@ -1,0 +1,96 @@
+<!--
+  Generated template for the TambahPinjamanPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><h1>Detail Pinjaman</h1></ion-title>
+    <button ion-button menuToggle>
+      <ion-icon ios="ios-home" md="md-home"></ion-icon>
+          </button>  
+
+         
+          <!-- <ion-buttons end>
+            <button ion-button (click)="hapusSemuaDataPinjaman()">
+             
+            </button>
+          </ion-buttons> -->
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked><h2>Jumlah Pinjaman</h2></ion-label>
+            <ion-select [(ngModel)]="IDR">
+                <ion-option value="35 Juta">35 Juta</ion-option>
+                <ion-option value="70 Juta">70 Juta</ion-option>
+                <ion-option value="100 Juta">100 Juta</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked><h2>Lama Pinjaman</h2></ion-label>
+              <ion-select [(ngModel)]="lamapinjaman">
+                  <ion-option value="1 Tahun">1 Tahun</ion-option>
+                  <ion-option value="2 Tahun">2 Tahun</ion-option>
+                  
+              </ion-select>
+             
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked><h2>Transfer Dana</h2></ion-label>
+              <ion-select [(ngModel)]="transfer">
+                  <ion-option value="BCA">BCA</ion-option>
+                  <ion-option value="BNI">BNI</ion-option>
+                  <ion-option value="MANDIRI">MANDIRI</ion-option>
+                  
+              </ion-select>       
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked><h2>NO Rekening</h2></ion-label>
+              <ion-input type="text" [(ngModel)]="norek"></ion-input>        
+          </ion-item>
+
+          <!-- <ion-item>
+              <ion-label stacked><h2>No HP</h2></ion-label>
+              <ion-input type="text" [(ngModel)]="nohp"></ion-input>        
+          </ion-item> -->
+
+      
+
+          <!-- <ion-item>
+              <ion-label stacked>Tanggal</ion-label>
+              <ion-input type="date" [(ngModel)]="tanggalPeminjaman"></ion-input>        
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked>Tanggal mengembalikan</ion-label>
+              <ion-input displayFormat="MM/DD/YYYY" type="date" [(ngModel)]="tanggalPengembalian"></ion-input>       
+          </ion-item> -->
+
+          <ion-buttons end>
+            <button ion-button round (click)="simpanData()">Ajukan Pinjaman</button>
+          </ion-buttons> 
+
+          
+</ion-list>
+
+<ion-card *ngFor="let item of listDataPinjaman">
+  <ion-item>        
+     <span item-left> {{item.norek |uppercase}}</span>
+      <button ion-button icon-left clear item-end color="danger" (click)="hapusDataPinjaman(item)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

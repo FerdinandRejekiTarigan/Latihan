@@ -1,0 +1,66 @@
+<!--
+  Generated template for the ProfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><h1>Profil</h1></ion-title>
+    <button ion-button menuToggle>
+      <ion-icon ios="ios-home" md="md-home"></ion-icon>
+          </button>  
+          <!-- <ion-buttons end>
+            <button ion-button (click)="hapusSemuaDataProfil()">
+             
+            </button>
+          </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  <ion-item>
+    <ion-label stacked><h2>NO KTP</h2></ion-label>
+    <ion-input type="text" [(ngModel)]="noKtp"></ion-input>        
+</ion-item>
+
+<ion-item>
+    <ion-label stacked><h2>Nama Lengkap</h2></ion-label>
+    <ion-input type="text" [(ngModel)]="namalengkap"></ion-input>        
+</ion-item>
+
+<ion-item>
+    <ion-label stacked><h2>NO HP</h2></ion-label>
+    <ion-input type="text" [(ngModel)]="nohp"></ion-input>        
+</ion-item>
+
+<ion-item>
+    <ion-label stacked><h2>Email</h2></ion-label>
+    <ion-input type="text" [(ngModel)]="email"></ion-input>        
+</ion-item>
+
+<ion-item>
+    <ion-label stacked><h2>Alamat</h2></ion-label>
+    <ion-input type="text" [(ngModel)]="alamat"></ion-input>        
+</ion-item>
+
+
+<ion-buttons end>
+    <button ion-button round (click)="simpanDataProfil()">Verifikasi</button>
+  </ion-buttons>
+
+</ion-list>
+
+<ion-card *ngFor="let item of listProfil">
+  <ion-item>
+      <span item-left> {{item.namalengkap |uppercase}}</span>
+      <button ion-button icon-left clear item-end color="danger" (click)="hapusDataProfil(item)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-card>
+
+
+</ion-content>

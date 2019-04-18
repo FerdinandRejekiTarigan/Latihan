@@ -1,0 +1,7 @@
+{
+  "name": "Latihan",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

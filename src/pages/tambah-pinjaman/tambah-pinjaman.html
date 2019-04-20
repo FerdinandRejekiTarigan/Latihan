@@ -6,16 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar  color = "primary">
     <ion-title><h1>Detail Pinjaman</h1></ion-title>
     <button ion-button menuToggle>
       <ion-icon ios="ios-home" md="md-home"></ion-icon>
-          </button>  
+          </button>
 
-         
+
           <!-- <ion-buttons end>
             <button ion-button (click)="hapusSemuaDataPinjaman()">
-             
+
             </button>
           </ion-buttons> -->
 
@@ -40,9 +40,9 @@
               <ion-select [(ngModel)]="lamapinjaman">
                   <ion-option value="1 Tahun">1 Tahun</ion-option>
                   <ion-option value="2 Tahun">2 Tahun</ion-option>
-                  
+
               </ion-select>
-             
+
           </ion-item>
 
           <ion-item>
@@ -51,41 +51,41 @@
                   <ion-option value="BCA">BCA</ion-option>
                   <ion-option value="BNI">BNI</ion-option>
                   <ion-option value="MANDIRI">MANDIRI</ion-option>
-                  
-              </ion-select>       
+
+              </ion-select>
           </ion-item>
 
           <ion-item>
               <ion-label stacked><h2>NO Rekening</h2></ion-label>
-              <ion-input type="text" [(ngModel)]="norek"></ion-input>        
+              <ion-input type="text" [(ngModel)]="norek"></ion-input>
           </ion-item>
 
           <!-- <ion-item>
               <ion-label stacked><h2>No HP</h2></ion-label>
-              <ion-input type="text" [(ngModel)]="nohp"></ion-input>        
+              <ion-input type="text" [(ngModel)]="nohp"></ion-input>
           </ion-item> -->
 
-      
+
 
           <!-- <ion-item>
               <ion-label stacked>Tanggal</ion-label>
-              <ion-input type="date" [(ngModel)]="tanggalPeminjaman"></ion-input>        
+              <ion-input type="date" [(ngModel)]="tanggalPeminjaman"></ion-input>
           </ion-item>
 
           <ion-item>
               <ion-label stacked>Tanggal mengembalikan</ion-label>
-              <ion-input displayFormat="MM/DD/YYYY" type="date" [(ngModel)]="tanggalPengembalian"></ion-input>       
+              <ion-input displayFormat="MM/DD/YYYY" type="date" [(ngModel)]="tanggalPengembalian"></ion-input>
           </ion-item> -->
 
           <ion-buttons end>
             <button ion-button round (click)="simpanData()">Ajukan Pinjaman</button>
-          </ion-buttons> 
+          </ion-buttons>
 
-          
+
 </ion-list>
 
 <ion-card *ngFor="let item of listDataPinjaman">
-  <ion-item>        
+  <ion-item>
      <span item-left> {{item.norek |uppercase}}</span>
       <button ion-button icon-left clear item-end color="danger" (click)="hapusDataPinjaman(item)">
         <ion-icon name="trash"></ion-icon>
